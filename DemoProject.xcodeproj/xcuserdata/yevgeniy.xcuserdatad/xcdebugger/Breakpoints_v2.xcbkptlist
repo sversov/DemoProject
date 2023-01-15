@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B44E4465-859F-440E-AE75-EC5E0E6E9C63"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8A3CDBE-2F2B-452F-90DA-FAE1E053E3C1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoProject/Application/CatsList/Views/CatItemView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42FB7529-6FC6-4544-B5E2-3A51B02A8C8E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DemoProjectTests/SceneDelegateTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "test_configureApplicationCoordinator_shouldConfigureWindow()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "42FB7529-6FC6-4544-B5E2-3A51B02A8C8E - 78e17967bd19db18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DemoProjectTests.SceneDelegateTests.test_configureApplicationCoordinator_shouldConfigureWindow() -&gt; ()"
+                  moduleName = "DemoProjectTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yevgeniy/PetProjects/DemoProject/DemoProjectTests/SceneDelegateTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  uuid = "42FB7529-6FC6-4544-B5E2-3A51B02A8C8E - 78e17967bd19db18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DemoProjectTests.SceneDelegateTests.test_configureApplicationCoordinator_shouldConfigureWindow() -&gt; ()"
+                  moduleName = "DemoProjectTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yevgeniy/PetProjects/DemoProject/DemoProjectTests/SceneDelegateTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

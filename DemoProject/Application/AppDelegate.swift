@@ -1,0 +1,39 @@
+//
+//  AppDelegate.swift
+//  DemoProject
+//
+//  Created by Yevgeniy Prokoshev on 13/01/2023.
+//
+
+import UIKit
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+	func application(_ application: UIApplication,
+					 didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		configureSharedCache()
+		return true
+	}
+
+	// MARK: UISceneSession Lifecycle
+
+	func application(_ application: UIApplication,
+					 configurationForConnecting connectingSceneSession: UISceneSession,
+					 options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+		
+		return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+	}
+
+	func application(_ application: UIApplication,
+					 didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+
+}
+
+extension AppDelegate {
+	
+	func configureSharedCache() {
+		URLCache.shared.memoryCapacity = 10_000_000
+		URLCache.shared.diskCapacity = 1_000_000_000
+	}
+}
