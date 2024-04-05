@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		577164C52BC0444700969E0A /* LuckyChanceViewswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577164C42BC0444700969E0A /* LuckyChanceViewswift.swift */; };
+		577164C52BC0444700969E0A /* LuckyChanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577164C42BC0444700969E0A /* LuckyChanceView.swift */; };
+		577164C72BC05B5B00969E0A /* LuckyChanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577164C62BC05B5B00969E0A /* LuckyChanceViewModel.swift */; };
 		57893C5929715027004F84FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C5829715026004F84FC /* AppDelegate.swift */; };
 		57893C5B29715027004F84FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C5A29715027004F84FC /* SceneDelegate.swift */; };
 		57893C6229715029004F84FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57893C6129715029004F84FC /* Assets.xcassets */; };
@@ -44,7 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		577164C42BC0444700969E0A /* LuckyChanceViewswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyChanceViewswift.swift; sourceTree = "<group>"; };
+		577164C42BC0444700969E0A /* LuckyChanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyChanceView.swift; sourceTree = "<group>"; };
+		577164C62BC05B5B00969E0A /* LuckyChanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyChanceViewModel.swift; sourceTree = "<group>"; };
 		57893C5529715026004F84FC /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57893C5829715026004F84FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57893C5A29715027004F84FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,11 +93,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		577164C22BC0401500969E0A /* Cocktail */ = {
+		577164C22BC0401500969E0A /* LuckyCocktail */ = {
 			isa = PBXGroup;
 			children = (
+				577164C42BC0444700969E0A /* LuckyChanceView.swift */,
+				577164C62BC05B5B00969E0A /* LuckyChanceViewModel.swift */,
 			);
-			path = Cocktail;
+			path = LuckyCocktail;
 			sourceTree = "<group>";
 		};
 		57893C4C29715026004F84FC = {
@@ -142,7 +146,7 @@
 		57893C8829715391004F84FC /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				577164C22BC0401500969E0A /* Cocktail */,
+				577164C22BC0401500969E0A /* LuckyCocktail */,
 				57893CA82972B803004F84FC /* BeerDetails */,
 				57893CA12971925B004F84FC /* BeersList */,
 				57893C5829715026004F84FC /* AppDelegate.swift */,
@@ -168,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				57893CB02972CD1C004F84FC /* AsynchronousImage.swift */,
-				577164C42BC0444700969E0A /* LuckyChanceViewswift.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,7 +362,7 @@
 				57893C5929715027004F84FC /* AppDelegate.swift in Sources */,
 				57893C5B29715027004F84FC /* SceneDelegate.swift in Sources */,
 				57893C9A29716711004F84FC /* BeersListView.swift in Sources */,
-				577164C52BC0444700969E0A /* LuckyChanceViewswift.swift in Sources */,
+				577164C52BC0444700969E0A /* LuckyChanceView.swift in Sources */,
 				57893C96297159FB004F84FC /* Request.swift in Sources */,
 				57893CAF2972C697004F84FC /* BeerDetailsViewModel.swift in Sources */,
 				57893C94297159FB004F84FC /* APIClient.swift in Sources */,
@@ -368,6 +371,7 @@
 				57893C9D297168E7004F84FC /* DrinkModel.swift in Sources */,
 				57893CAD2972C58E004F84FC /* BeerDetailsView.swift in Sources */,
 				57893C8D29715861004F84FC /* ApplicationCoordinator.swift in Sources */,
+				577164C72BC05B5B00969E0A /* LuckyChanceViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

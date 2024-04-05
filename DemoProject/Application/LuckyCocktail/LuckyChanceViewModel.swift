@@ -1,32 +1,12 @@
 //
-//  LuckyChanceView.swift
+//  LuckyChanceViewModel.swift
 //  DemoProject
 //
 //  Created by Yevgeniy Prokoshev on 05/04/2024.
 //
 
-import SwiftUI
+import Foundation
 import Combine
-
-struct LuckyChanceView: View {
-	@ObservedObject var viewModel: LuckyChanceViewModel
-	
-	var body: some View {
-		VStack (spacing: 30){
-			Text(viewModel.randomEmoji)
-				.font(.system(size: viewModel.state == .idle ? 60 : 120))
-			if viewModel.state == .idle {
-				Button("Feeling Lucky",
-					   action: { viewModel.playTheGame() })
-				.buttonStyle(.borderedProminent)
-				.controlSize(.large)
-				.tint(.green)
-			}
-		}
-		.animation(.spring,
-				   value: viewModel.state)
-	}
-}
 
 class LuckyChanceViewModel: ObservableObject {
 	
@@ -41,12 +21,14 @@ class LuckyChanceViewModel: ObservableObject {
 	
 	@Published private(set) var randomEmoji: String = "🍸"
 	@Published private(set) var state: State = .idle
-
+	
 	private(set) var currentCycle = 0
 	private(set) var timer: AnyCancellable?
-	let finishHandler: () -> Void
 	
-	init(finishHandler: @escaping () -> Void) 
+	let finishHandler: () -> Void
+	let buttonTitle = "Feeling Lucky"
+
+	init(finishHandler: @escaping () -> Void)
 	{
 		self.finishHandler = finishHandler
 	}
@@ -76,8 +58,4 @@ class LuckyChanceViewModel: ObservableObject {
 		timer?.cancel()
 		finishHandler()
 	}
-}
-
-#Preview {
-	LuckyChanceView(viewModel: LuckyChanceViewModel(finishHandler: {}))
 }
