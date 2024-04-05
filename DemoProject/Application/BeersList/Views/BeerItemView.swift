@@ -18,7 +18,7 @@ struct BeerItemView: View {
 			roundedRectangleView
 			HStack(spacing: 10) {
 				if let url = imageURL {
-					BeerProfileImage(url: url)
+					AsynchronousImage(url: url)
 						.frame(width: 60, height: 60)
 						.background(Color.gray.opacity(0.4))
 						.clipShape(Circle())

@@ -65,16 +65,17 @@ struct BeersListView: View {
 #if DEBUG
 struct BeersListView_Previews: PreviewProvider {
 	static var previews: some View {
-		BeersListView(viewModel: BeersListViewModel.makePreviewModel(),
-					  onBeerSelection: { _ in})
+		EmptyView()
+//		BeersListView(viewModel: BeersListViewModel.makePreviewModel(),
+//					  onBeerSelection: { _ in})
 	}
 }
 
 extension BeersListViewModel {
-	static func makePreviewModel() -> BeersListViewModel {
-		return BeersListViewModel(apiClient: PunkAPIClient(
-			baseURL: "https://api.punkapi.com/v2",
-			session: .shared))
-	}
+//	static func makePreviewModel() -> BeersListViewModel {
+//		return BeersListViewModel(apiClient: PunkAPIClient(
+//			baseURL: "https://api.punkapi.com/v2",
+//			session: .shared))
+//	}
 }
 #endif

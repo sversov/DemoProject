@@ -55,7 +55,7 @@ private extension BeerDetailsView {
 					subtitle: String) -> some View {
 		VStack {
 			if let imageURL = imageURL {
-				BeerProfileImage(url: imageURL)
+				AsynchronousImage(url: imageURL)
 					.aspectRatio(contentMode: .fit)
 					.frame(height: 300,
 						   alignment: .center)

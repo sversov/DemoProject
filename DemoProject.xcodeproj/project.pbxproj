@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		577164C52BC0444700969E0A /* LuckyChanceViewswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577164C42BC0444700969E0A /* LuckyChanceViewswift.swift */; };
 		57893C5929715027004F84FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C5829715026004F84FC /* AppDelegate.swift */; };
 		57893C5B29715027004F84FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C5A29715027004F84FC /* SceneDelegate.swift */; };
 		57893C6229715029004F84FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57893C6129715029004F84FC /* Assets.xcassets */; };
@@ -16,14 +17,14 @@
 		57893C94297159FB004F84FC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C91297159FB004F84FC /* APIClient.swift */; };
 		57893C95297159FB004F84FC /* Request+CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C92297159FB004F84FC /* Request+CRUD.swift */; };
 		57893C96297159FB004F84FC /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C93297159FB004F84FC /* Request.swift */; };
-		57893C982971624C004F84FC /* PunkAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C972971624C004F84FC /* PunkAPIClient.swift */; };
+		57893C982971624C004F84FC /* DemoProjectAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C972971624C004F84FC /* DemoProjectAPIClient.swift */; };
 		57893C9A29716711004F84FC /* BeersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C9929716711004F84FC /* BeersListView.swift */; };
-		57893C9D297168E7004F84FC /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C9B297168E7004F84FC /* Beer.swift */; };
+		57893C9D297168E7004F84FC /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C9B297168E7004F84FC /* DrinkModel.swift */; };
 		57893CA0297191CD004F84FC /* BeersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893C9F297191CD004F84FC /* BeersListViewModel.swift */; };
 		57893CA5297192AA004F84FC /* BeerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CA4297192AA004F84FC /* BeerItemView.swift */; };
 		57893CAD2972C58E004F84FC /* BeerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CA92972C51D004F84FC /* BeerDetailsView.swift */; };
 		57893CAF2972C697004F84FC /* BeerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CAE2972C697004F84FC /* BeerDetailsViewModel.swift */; };
-		57893CB12972CD1C004F84FC /* BeerProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB02972CD1C004F84FC /* BeerProfileImage.swift */; };
+		57893CB12972CD1C004F84FC /* AsynchronousImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB02972CD1C004F84FC /* AsynchronousImage.swift */; };
 		57893CB829742151004F84FC /* MockBeerJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB529742151004F84FC /* MockBeerJSON.swift */; };
 		57893CB929742151004F84FC /* APIClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB629742151004F84FC /* APIClientStub.swift */; };
 		57893CBA29742151004F84FC /* MockBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB729742151004F84FC /* MockBeer.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		577164C42BC0444700969E0A /* LuckyChanceViewswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyChanceViewswift.swift; sourceTree = "<group>"; };
 		57893C5529715026004F84FC /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57893C5829715026004F84FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57893C5A29715027004F84FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,14 +57,14 @@
 		57893C91297159FB004F84FC /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		57893C92297159FB004F84FC /* Request+CRUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+CRUD.swift"; sourceTree = "<group>"; };
 		57893C93297159FB004F84FC /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		57893C972971624C004F84FC /* PunkAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkAPIClient.swift; sourceTree = "<group>"; };
+		57893C972971624C004F84FC /* DemoProjectAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoProjectAPIClient.swift; sourceTree = "<group>"; };
 		57893C9929716711004F84FC /* BeersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersListView.swift; sourceTree = "<group>"; };
-		57893C9B297168E7004F84FC /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		57893C9B297168E7004F84FC /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		57893C9F297191CD004F84FC /* BeersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersListViewModel.swift; sourceTree = "<group>"; };
 		57893CA4297192AA004F84FC /* BeerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerItemView.swift; sourceTree = "<group>"; };
 		57893CA92972C51D004F84FC /* BeerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsView.swift; sourceTree = "<group>"; };
 		57893CAE2972C697004F84FC /* BeerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsViewModel.swift; sourceTree = "<group>"; };
-		57893CB02972CD1C004F84FC /* BeerProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerProfileImage.swift; sourceTree = "<group>"; };
+		57893CB02972CD1C004F84FC /* AsynchronousImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousImage.swift; sourceTree = "<group>"; };
 		57893CB529742151004F84FC /* MockBeerJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBeerJSON.swift; sourceTree = "<group>"; };
 		57893CB629742151004F84FC /* APIClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientStub.swift; sourceTree = "<group>"; };
 		57893CB729742151004F84FC /* MockBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBeer.swift; sourceTree = "<group>"; };
@@ -89,6 +91,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		577164C22BC0401500969E0A /* Cocktail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cocktail;
+			sourceTree = "<group>";
+		};
 		57893C4C29715026004F84FC = {
 			isa = PBXGroup;
 			children = (
@@ -133,11 +142,12 @@
 		57893C8829715391004F84FC /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				577164C22BC0401500969E0A /* Cocktail */,
 				57893CA82972B803004F84FC /* BeerDetails */,
 				57893CA12971925B004F84FC /* BeersList */,
 				57893C5829715026004F84FC /* AppDelegate.swift */,
 				57893C5A29715027004F84FC /* SceneDelegate.swift */,
-				57893C972971624C004F84FC /* PunkAPIClient.swift */,
+				57893C972971624C004F84FC /* DemoProjectAPIClient.swift */,
 				57893C892971539F004F84FC /* Coordinators */,
 				57893C8B297153B2004F84FC /* Models */,
 				57893C8A297153A6004F84FC /* Views */,
@@ -157,7 +167,8 @@
 		57893C8A297153A6004F84FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57893CB02972CD1C004F84FC /* BeerProfileImage.swift */,
+				57893CB02972CD1C004F84FC /* AsynchronousImage.swift */,
+				577164C42BC0444700969E0A /* LuckyChanceViewswift.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,7 +176,7 @@
 		57893C8B297153B2004F84FC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				57893C9B297168E7004F84FC /* Beer.swift */,
+				57893C9B297168E7004F84FC /* DrinkModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,19 +352,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57893CB12972CD1C004F84FC /* BeerProfileImage.swift in Sources */,
+				57893CB12972CD1C004F84FC /* AsynchronousImage.swift in Sources */,
 				57893C8F297158AB004F84FC /* Coordinator.swift in Sources */,
 				57893C95297159FB004F84FC /* Request+CRUD.swift in Sources */,
-				57893C982971624C004F84FC /* PunkAPIClient.swift in Sources */,
+				57893C982971624C004F84FC /* DemoProjectAPIClient.swift in Sources */,
 				57893C5929715027004F84FC /* AppDelegate.swift in Sources */,
 				57893C5B29715027004F84FC /* SceneDelegate.swift in Sources */,
 				57893C9A29716711004F84FC /* BeersListView.swift in Sources */,
+				577164C52BC0444700969E0A /* LuckyChanceViewswift.swift in Sources */,
 				57893C96297159FB004F84FC /* Request.swift in Sources */,
 				57893CAF2972C697004F84FC /* BeerDetailsViewModel.swift in Sources */,
 				57893C94297159FB004F84FC /* APIClient.swift in Sources */,
 				57893CA5297192AA004F84FC /* BeerItemView.swift in Sources */,
 				57893CA0297191CD004F84FC /* BeersListViewModel.swift in Sources */,
-				57893C9D297168E7004F84FC /* Beer.swift in Sources */,
+				57893C9D297168E7004F84FC /* DrinkModel.swift in Sources */,
 				57893CAD2972C58E004F84FC /* BeerDetailsView.swift in Sources */,
 				57893C8D29715861004F84FC /* ApplicationCoordinator.swift in Sources */,
 			);

@@ -1,13 +1,13 @@
 //
-//  BeerProfileImage.swift
+//  AsynchronousImage.swift
 //  DemoProject
 //
-//  Created by Yevgeniy Prokoshev on 14/01/2023.
+//  Created by Yevgeniy Prokoshev on 05/04/2024.
 //
 
 import SwiftUI
 
-struct BeerProfileImage: View {
+struct AsynchronousImage: View {
 	let url: URL
 	
 	var body: some View {
@@ -26,7 +26,7 @@ struct BeerProfileImage: View {
 						.transition(.scale(scale: 0.1, anchor: .center))
 				case .failure:
 					VStack(spacing: 5) {
-						Text("🍺")
+						Text("🍸")
 						Image(systemName: "wifi.slash")
 					}
 				@unknown default:

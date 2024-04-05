@@ -1,14 +1,14 @@
 //
-//  PunkAPIClient.swift
+//  DemoProjectAPIClient.swift
 //  DemoProject
 //
-//  Created by Yevgeniy Prokoshev on 13/01/2023.
+//  Created by Yevgeniy Prokoshev on 05/04/2024.
 //
 
 import Foundation
 import Combine
 
-struct PunkAPIClient: APIClient {
+struct DemoProjectAPIClient: APIClient {
 	
 	enum HTTPError: Error {
 		case serverSideError(Int)
