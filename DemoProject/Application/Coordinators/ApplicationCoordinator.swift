@@ -49,7 +49,6 @@ extension ApplicationCoordinator {
 				self?.pushCharacterDetails(for: character)
 			})
 			.navigationTitle(model.title)
-			.navigationBarTitleDisplayMode(.large)
 		
 		return UIHostingController(rootView: view)
 	}
