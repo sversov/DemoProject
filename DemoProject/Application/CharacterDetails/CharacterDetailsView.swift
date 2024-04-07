@@ -58,7 +58,9 @@ private extension CharacterDetailsView {
 	
 	
 	@ViewBuilder
-	func profileView(imageURL: URL?) -> some View {
+	func profileView(
+		imageURL: URL?
+	) -> some View {
 		if let imageURL = imageURL {
 			AsynchronousImage(url: imageURL)
 				.aspectRatio(contentMode: .fit)
@@ -72,9 +74,10 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	@ViewBuilder
-	func genderView(gender: RMCharactersPageModel.RMCharacter.Gender,
-					species: String) -> some View {
+	func genderView(
+		gender: RMCharactersPageModel.RMCharacter.Gender,
+		species: String
+	) -> some View {
 		VStack(alignment: .leading) {
 			HStack {
 				Text(gender.emoji)
@@ -85,8 +88,9 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	@ViewBuilder
-	func statusView(status: RMCharactersPageModel.RMCharacter.Status) -> some View {
+	func statusView(
+		status: RMCharactersPageModel.RMCharacter.Status
+	) -> some View {
 		VStack(alignment: .leading) {
 			Text("Status")
 				.font(.caption)
@@ -102,13 +106,16 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	func statusIndicatorView(status: RMCharactersPageModel.RMCharacter.Status) -> some View {
+	func statusIndicatorView(
+		status: RMCharactersPageModel.RMCharacter.Status
+	) -> some View {
 		Circle()
 			.fill(status.colour)
 	}
 	
-	@ViewBuilder
-	func originView(origin: RMCharactersPageModel.RMCharacter.Origin?) -> some View {
+	func originView(
+		origin: RMCharactersPageModel.RMCharacter.Origin?
+	) -> some View {
 		VStack(alignment: .leading) {
 			Text("Origin")
 				.font(.caption)
@@ -123,8 +130,9 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	@ViewBuilder
-	func locationView(location: RMCharactersPageModel.RMCharacter.Location?) -> some View {
+	func locationView(
+		location: RMCharactersPageModel.RMCharacter.Location?
+	) -> some View {
 		VStack(alignment: .leading) {
 			Text("Current Location")
 				.font(.caption)

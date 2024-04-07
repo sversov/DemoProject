@@ -11,32 +11,18 @@ struct AsynchronousImage: View {
 	let url: URL
 	
 	var body: some View {
-		AsyncImage(
-			url: url,
-			transaction: Transaction(animation: .easeInOut)
-		) { phase in
-			switch phase {
-				case .empty:
-					ProgressView()
-						.tint(.white)
-				case .success(let image):
-					image
-						.resizable()
-						.aspectRatio(contentMode: .fill)
-						.transition(.scale(scale: 0.1, anchor: .center))
-				case .failure:
-					VStack(spacing: 5) {
-						Text("🤖")
-						font(.system(size: 30))
-						Image(systemName: "wifi.slash")
-					}
-				@unknown default:
-					EmptyView()
-			}
+		AsyncImage(url: url) { image in
+			image.resizable()
+		} placeholder: {
+			ProgressView()
 		}
 	}
 }
 
 #Preview("With URL") {
 	AsynchronousImage(url: URL(string: "https://rickandmortyapi.com/api/character/avatar/3.jpeg")!)
+}
+
+#Preview("With Progress") {
+	AsynchronousImage(url: URL(string: "invalid URL")!)
 }
