@@ -29,6 +29,8 @@
 		57893CB829742151004F84FC /* MockRMCharactersPageModelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB529742151004F84FC /* MockRMCharactersPageModelJSON.swift */; };
 		57893CB929742151004F84FC /* APIClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB629742151004F84FC /* APIClientStub.swift */; };
 		57893CBA29742151004F84FC /* MockRMCharactersPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893CB729742151004F84FC /* MockRMCharactersPageModel.swift */; };
+		57E4AEFF2BC3073800288767 /* CharacterDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4AEFE2BC3073800288767 /* CharacterDetailsViewModelTests.swift */; };
+		57E4AF012BC3083700288767 /* RMCharacterGenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E4AF002BC3083700288767 /* RMCharacterGenderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		57893CB629742151004F84FC /* APIClientStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientStub.swift; sourceTree = "<group>"; };
 		57893CB729742151004F84FC /* MockRMCharactersPageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRMCharactersPageModel.swift; sourceTree = "<group>"; };
 		57893CBF29742E38004F84FC /* BeerDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		57E4AEFE2BC3073800288767 /* CharacterDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		57E4AF002BC3083700288767 /* RMCharacterGenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterGenderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			children = (
 				57893CB429742141004F84FC /* MocksAndStubs */,
 				577164D62BC2F1FC00969E0A /* RMCharactersPageModelTests.swift */,
+				57E4AEFE2BC3073800288767 /* CharacterDetailsViewModelTests.swift */,
+				57E4AF002BC3083700288767 /* RMCharacterGenderTests.swift */,
 				57893CBF29742E38004F84FC /* BeerDetailsViewModelTests.swift */,
 				577164D82BC2F92300969E0A /* CharactersListViewModelTest.swift */,
 			);
@@ -333,8 +339,10 @@
 				57893CB829742151004F84FC /* MockRMCharactersPageModelJSON.swift in Sources */,
 				577164D72BC2F1FC00969E0A /* RMCharactersPageModelTests.swift in Sources */,
 				577164D92BC2F92300969E0A /* CharactersListViewModelTest.swift in Sources */,
+				57E4AF012BC3083700288767 /* RMCharacterGenderTests.swift in Sources */,
 				57893CBA29742151004F84FC /* MockRMCharactersPageModel.swift in Sources */,
 				57893CB929742151004F84FC /* APIClientStub.swift in Sources */,
+				57E4AEFF2BC3073800288767 /* CharacterDetailsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +496,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,6 +524,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,7 +547,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45FT8KN2M4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = EvgenyProkoshev.DemoProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -557,7 +567,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45FT8KN2M4;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = EvgenyProkoshev.DemoProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

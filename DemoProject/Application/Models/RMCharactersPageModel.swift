@@ -72,7 +72,7 @@ struct RMCharactersPageModel: Decodable {
 			case unknown = "unknown"
 		}
 		
-		enum Gender: String, Decodable {
+		enum Gender: String, Decodable, CaseIterable {
 			case male = "Male"
 			case female = "Female"
 			case genderless = "Genderless"
@@ -152,15 +152,17 @@ extension RMCharactersPageModel {
  
 extension RMCharactersPageModel.RMCharacter {
 	static func make(
+		name: String = UUID().uuidString,
+		species: String = UUID().uuidString,
 		status: RMCharactersPageModel.RMCharacter.Status = .alive,
 		gender: RMCharactersPageModel.RMCharacter.Gender = .male,
 		image: URL? = URL(string: "https://rickandmortyapi.com/api/character/avatar/3.jpeg")
 	) -> RMCharactersPageModel.RMCharacter {
 		RMCharactersPageModel.RMCharacter(
 			id: UUID().hashValue,
-			name: "Name \((UUID().uuidString).prefix(3))",
+			name: name,
 			status: status,
-			species: "Species \((UUID().uuidString).prefix(3))",
+			species: species,
 			gender: gender,
 			origin: .make(),
 			location: .make(),

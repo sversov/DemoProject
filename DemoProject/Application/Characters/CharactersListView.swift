@@ -50,7 +50,6 @@ extension CharactersListView {
 			.buttonStyle(.borderedProminent)
 			.controlSize(.large)
 			.tint(.green)
-
 		}
 	}
 	
@@ -65,10 +64,10 @@ extension CharactersListView {
 				.onTapGesture {
 					onSelection(character)
 				}
-				.listRowSeparator(.visible)
+				.listRowSeparator(.hidden)
 			}
 		}
-		.listStyle(PlainListStyle())
+		.listStyle(.plain)
 	}
 }
 
@@ -81,11 +80,11 @@ extension CharactersListView {
 		onSelection: { _ in })
 }
 
-#Preview("Error") {
-	CharactersListView(
-		viewModel: CharactersListViewModel(
-			apiClient: DemoProjectAPIClient(
-				baseURL: "https://rickandmortyapi.com/api/123",
-				session: .shared)),
-		onSelection: { _ in })
-}
+//#Preview("Error") {
+//	CharactersListView(
+//		viewModel: CharactersListViewModel(
+//			apiClient: DemoProjectAPIClient(
+//				baseURL: "https://rickandmortyapi.com/api/123",
+//				session: .shared)),
+//		onSelection: { _ in })
+//}

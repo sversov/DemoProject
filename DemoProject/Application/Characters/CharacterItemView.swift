@@ -14,8 +14,6 @@ struct CharacterItemView: View {
 	
 	var body: some View {
 		HStack {
-			Text("🍿")
-				.font(.system(size: 20))
 			VStack(alignment: .leading) {
 				Text(name)
 					.font(.title)
@@ -26,9 +24,13 @@ struct CharacterItemView: View {
 			Image(systemName:"chevron.right")
 				.resizable()
 				.aspectRatio(contentMode: .fit)
-				.foregroundColor(.blue)
+				.foregroundColor(.teal)
 				.frame(height: 16)
 		}
+		.padding(10)
+		.background(.quinary)
+		.clipShape(RoundedRectangle(cornerRadius: 12,
+									style: .continuous))
 	}
 }
 

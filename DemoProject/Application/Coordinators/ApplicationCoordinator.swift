@@ -49,7 +49,7 @@ extension ApplicationCoordinator {
 				self?.pushCharacterDetails(for: character)
 			})
 			.navigationTitle(model.title)
-			.navigationBarTitleDisplayMode(.inline)
+			.navigationBarTitleDisplayMode(.large)
 		
 		return UIHostingController(rootView: view)
 	}
@@ -59,6 +59,7 @@ extension ApplicationCoordinator {
 	) -> UIViewController {
 		let model = CharacterDetailsViewModel(character: character)
 		let view = CharacterDetailsView(model: model)
+			.navigationTitle(model.name)
 		return UIHostingController(rootView: view)
 	}
 }
