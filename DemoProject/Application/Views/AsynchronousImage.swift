@@ -26,7 +26,8 @@ struct AsynchronousImage: View {
 						.transition(.scale(scale: 0.1, anchor: .center))
 				case .failure:
 					VStack(spacing: 5) {
-						Text("🍸")
+						Text("🤖")
+						font(.system(size: 30))
 						Image(systemName: "wifi.slash")
 					}
 				@unknown default:
@@ -34,4 +35,8 @@ struct AsynchronousImage: View {
 			}
 		}
 	}
+}
+
+#Preview("With URL") {
+	AsynchronousImage(url: URL(string: "https://rickandmortyapi.com/api/character/avatar/3.jpeg")!)
 }

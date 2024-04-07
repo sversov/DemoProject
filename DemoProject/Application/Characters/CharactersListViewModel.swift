@@ -1,29 +1,25 @@
 //
-//  BeersListViewModel.swift
+//  CharactersListViewModel.swift
 //  DemoProject
 //
-//  Created by Yevgeniy Prokoshev on 13/01/2023.
+//  Created by Yevgeniy Prokoshev on 07/04/2024.
 //
 
 import Foundation
 import Combine
 
-class BeersListViewModel: ObservableObject {
+class CharactersListViewModel: ObservableObject {
 	
 	enum State {
 		case idle
 		case loading
 		case error(Error)
-		case loaded([Beer])
+		case loaded([RMCharactersPageModel.RMCharacter])
 	}
 	
-	// MARK: - Properties -
-	// MARK: Internal
-	
-	let title: String = "Brew Dog Beers"
 	@Published private(set) var state: State = .idle
-
-	// MARK: Private
+	let title: String = "Characters"
+	
 	private let apiClient: APIClient
 	private var cancellables: Set<AnyCancellable> = []
 	
@@ -31,14 +27,10 @@ class BeersListViewModel: ObservableObject {
 		self.apiClient = apiClient
 	}
 	
-	// MARK: - Methods -
-	// MARK: Internal
-
-	func fetchBeers() {
+	func fetchCharacters() {
 		state = .loading
-		let listRequest = Request<[Beer]>.get("/beers")
-		
-		apiClient.send(request: listRequest)
+		let charactersRequest = Request<RMCharactersPageModel>.get("/character")
+		apiClient.send(request: charactersRequest)
 			.receive(on: DispatchQueue.main)
 			.sink { [weak self] completion in
 				switch completion {
@@ -46,9 +38,8 @@ class BeersListViewModel: ObservableObject {
 						self?.state = .error(error)
 					case .finished: break
 				}
-			} receiveValue: { [weak self] items in
-				self?.state = .loaded(items)
+			} receiveValue: { [weak self] item in
+				self?.state = .loaded(item.results)
 			}.store(in: &cancellables)
 	}
-	
 }

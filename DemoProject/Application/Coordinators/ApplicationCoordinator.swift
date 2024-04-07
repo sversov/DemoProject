@@ -22,43 +22,43 @@ class ApplicationCoordinator: Coordinator {
 	}
 	
 	func start() {
-		let viewController = makeLuckyChanceView()
+		let viewController = makeCharactersListView()
 		navigationController.viewControllers = [viewController]
 		window.rootViewController = navigationController
 		window.makeKeyAndVisible()
 	}
 	
-	private func pushBeerDetails(beer: Beer) {
-//		let viewController = makeBeerDetailsView(beer: beer)
-//		navigationController.pushViewController(viewController,
-//												animated: true)
+	private func pushCharacterDetails(for character: RMCharactersPageModel.RMCharacter) {
+		let view = makeCharacterDetailsView(for: character)
+		navigationController.pushViewController(view,
+												animated: true)
 	}
+	
 }
 
 extension ApplicationCoordinator {
 	
-	func makeLuckyChanceView() -> UIViewController {
-		let model = LuckyChanceViewModel(finishHandler: {})
-		let view = LuckyChanceView(viewModel: model)
+	func makeCharactersListView() -> UIViewController {
+		let model = CharactersListViewModel(
+			apiClient: DemoProjectAPIClient(
+				baseURL: "https://rickandmortyapi.com/api",
+				session: .shared))
+		let view = CharactersListView(
+			viewModel: model,
+			onSelection: { [weak self] character in
+				self?.pushCharacterDetails(for: character)
+			})
+			.navigationTitle(model.title)
+			.navigationBarTitleDisplayMode(.inline)
+		
 		return UIHostingController(rootView: view)
 	}
 	
-//	func makeBeerListView() -> UIViewController {
-//		let model = BeersListViewModel(apiClient: PunkAPIClient(baseURL: "https://api.punkapi.com/v2",
-//																session: .shared))
-//		let view = BeersListView(viewModel: model,
-//								 onBeerSelection: pushBeerDetails)
-//			.navigationBarTitleDisplayMode(.inline)
-//			.navigationTitle(model.title)
-//
-//		return UIHostingController(rootView: view)
-//	}
-//	
-//	func makeBeerDetailsView(beer: Beer)  -> UIViewController {
-//		let model = BeerDetailsViewModel(beer: beer)
-//		let view = BeerDetailsView(viewModel: model)
-//			.navigationBarTitleDisplayMode(.inline)
-//			.navigationTitle(model.title)
-//		return UIHostingController(rootView: view)
-//	}
+	func makeCharacterDetailsView(
+		for character: RMCharactersPageModel.RMCharacter
+	) -> UIViewController {
+		let model = CharacterDetailsViewModel(character: character)
+		let view = CharacterDetailsView(model: model)
+		return UIHostingController(rootView: view)
+	}
 }

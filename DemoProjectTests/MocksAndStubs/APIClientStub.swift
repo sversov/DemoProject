@@ -2,17 +2,17 @@
 //  APIClientStub.swift
 //  DemoProjectTests
 //
-//  Created by Yevgeniy Prokoshev on 15/01/2023.
+//  Created by Yevgeniy Prokoshev on 04/07/2024.
 //
 import Combine
 @testable import DemoProject
 
 struct APIClientStub: APIClient {
 	
-	private let mockResponse = Beer.Mock.make()
+	private let mockResponse = RMCharactersPageModel.Mock.make()
 	
-	typealias BeerPublisher = AnyPublisher<[Beer], Error>
-	var publisher: BeerPublisher = MockPublisher.makeSuccess()
+	typealias PagePublisher = AnyPublisher<RMCharactersPageModel, Error>
+	var publisher: PagePublisher = MockPublisher.makeSuccess()
 	
 	func send<Response>(
 		request: Request<Response>
@@ -27,16 +27,16 @@ struct APIClientStub: APIClient {
 enum MockPublisher {
 	
 	static func makeSuccess(
-		_ beers: [Beer] = Beer.Mock.make()
-	) -> AnyPublisher<[Beer], Error> {
-		return Result.success(beers)
+		_ page: RMCharactersPageModel = RMCharactersPageModel.Mock.make()
+	) -> AnyPublisher<RMCharactersPageModel, Error> {
+		return Result.success(page)
 			.publisher
 			.eraseToAnyPublisher()
 	}
 	
 	static func makeFailure(
 		_ error: Error
-	) -> AnyPublisher<[Beer], Error> {
+	) -> AnyPublisher<RMCharactersPageModel, Error> {
 		return Result.failure(error)
 			.publisher
 			.eraseToAnyPublisher()

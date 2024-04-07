@@ -1,24 +1,24 @@
 //
-//  BeersListViewModel.swift
+//  CharactersListViewModelTest.swift
 //  DemoProjectTests
 //
-//  Created by Yevgeniy Prokoshev on 15/01/2023.
+//  Created by Yevgeniy Prokoshev on 07/04/2024.
 //
 
 import XCTest
 import Combine
 @testable import DemoProject
 
-class BeersListViewModelTests: XCTestCase {
+final class CharactersListViewModelTest: XCTestCase {
 	
-	private var sut: BeersListViewModel!
+	private var sut: CharactersListViewModel!
 	private var cancellables: Set<AnyCancellable> = []
 	private var mockAPIClient: APIClientStub!
 	
 	override func setUp() {
 		super.setUp()
 		mockAPIClient = APIClientStub()
-		sut = BeersListViewModel(apiClient: mockAPIClient)
+		sut = CharactersListViewModel(apiClient: mockAPIClient)
 	}
 	
 	func test_init_state_shouldSendIdleState() {
@@ -33,10 +33,10 @@ class BeersListViewModelTests: XCTestCase {
 	}
 	
 	func test_init_shouldHaveExpectedTitle() {
-		XCTAssertEqual(sut.title, "Brew Dog Beers")
+		XCTAssertEqual(sut.title, "Characters")
 	}
 	
-	func test_fetchBeers_shouldSendIdleLoadingLoadedStates() {
+	func test_fetchCharacters_shouldSendIdleLoadingLoadedStates() {
 		let promise = expectation(description: #function)
 		promise.expectedFulfillmentCount = 3
 		var callsCount = 0
@@ -52,13 +52,13 @@ class BeersListViewModelTests: XCTestCase {
 				promise.fulfill()
 			}.store(in: &cancellables)
 		
-		sut.fetchBeers()
+		sut.fetchCharacters()
 		wait(for: [promise], timeout: 0.5)
 	}
 	
-	func test_fetchBeers_whenSuccessResponse_shouldSendLoadedState() {
+	func test_fetchCharacters_whenSuccessResponse_shouldSendLoadedState() {
 		let promise = expectation(description: #function)
-		let expectedResponse = Beer.Mock.make()
+		let expectedResponse = RMCharactersPageModel.Mock.make()
 		let sut = makeSUT(MockPublisher.makeSuccess(expectedResponse))
 		sut.$state
 			.dropFirst(2)
@@ -67,15 +67,15 @@ class BeersListViewModelTests: XCTestCase {
 					XCTFail(#function)
 					return
 				}
-				XCTAssertEqual(value, expectedResponse)
+				XCTAssertEqual(value, expectedResponse.results)
 				promise.fulfill()
 			}.store(in: &cancellables)
 		
-		sut.fetchBeers()
+		sut.fetchCharacters()
 		wait(for: [promise], timeout: 0.5)
 	}
 	
-	func test_fetchBeers_whenFailureResponse_shouldSendErrorState() {
+	func test_fetchCharacters_whenFailureResponse_shouldSendErrorState() {
 		let promise = expectation(description: #function)
 		let expectedResponse = URLError(.networkConnectionLost)
 		let sut = makeSUT(MockPublisher.makeFailure(expectedResponse))
@@ -90,26 +90,26 @@ class BeersListViewModelTests: XCTestCase {
 				promise.fulfill()
 			}.store(in: &cancellables)
 		
-		sut.fetchBeers()
+		sut.fetchCharacters()
 		wait(for: [promise], timeout: 0.5)
 	}
 }
 
-extension BeersListViewModelTests {
+extension CharactersListViewModelTest {
 	
 	func makeSUT(
-		_ publisher: AnyPublisher<[Beer], Error>
-	) -> BeersListViewModel {
+		_ publisher: AnyPublisher<RMCharactersPageModel, Error>
+	) -> CharactersListViewModel {
 		let stubApiClient = APIClientStub(publisher: publisher)
-		return BeersListViewModel(apiClient: stubApiClient)
+		return CharactersListViewModel(apiClient: stubApiClient)
 	}
 	
 }
 
-extension BeersListViewModel.State: Equatable {
+extension CharactersListViewModel.State: Equatable {
 	public static func == (
-		lhs: BeersListViewModel.State,
-		rhs: BeersListViewModel.State
+		lhs: CharactersListViewModel.State,
+		rhs: CharactersListViewModel.State
 	) -> Bool {
 		switch (lhs, rhs) {
 			case (.idle, .idle): return true
@@ -118,5 +118,15 @@ extension BeersListViewModel.State: Equatable {
 			case (.loaded, .loaded): return true
 			default: return false
 		}
+	}
+}
+
+
+extension RMCharactersPageModel.RMCharacter: Equatable {
+	public static func == (
+		lhs: RMCharactersPageModel.RMCharacter,
+		rhs: RMCharactersPageModel.RMCharacter
+	) -> Bool {
+		return lhs.id == rhs.id
 	}
 }

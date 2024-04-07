@@ -14,6 +14,10 @@ struct DemoProjectAPIClient: APIClient {
 		case serverSideError(Int)
 	}
 	
+	enum DecodingError: Error {
+		case decodingError(String)
+	}
+	
 	let baseURL: String
 	let session: URLSession
 	
@@ -43,6 +47,10 @@ struct DemoProjectAPIClient: APIClient {
 			}
 			.decode(type: Response.self,
 					decoder: JSONDecoder())
+			.mapError({ error in
+				return DecodingError
+					.decodingError(error.localizedDescription)
+			})
 			.eraseToAnyPublisher()
 	}
 }
