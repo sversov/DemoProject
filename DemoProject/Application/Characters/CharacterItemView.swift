@@ -10,7 +10,7 @@ import SwiftUI
 struct CharacterItemView: View {
 	
 	let name: String
-	let status: RMCharactersPageModel.RMCharacter.Status
+	let status: CharactersPage.Character.Status
 	
 	var body: some View {
 		HStack {

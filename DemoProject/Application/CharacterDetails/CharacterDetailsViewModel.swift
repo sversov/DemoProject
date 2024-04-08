@@ -9,9 +9,9 @@ import Foundation
 
 class CharacterDetailsViewModel: ObservableObject {
 	
-	private let character: RMCharactersPageModel.RMCharacter
+	private let character: CharactersPage.Character
 	
-	init(character: RMCharactersPageModel.RMCharacter) {
+	init(character: CharactersPage.Character) {
 		self.character = character
 	}
 	
@@ -19,7 +19,7 @@ class CharacterDetailsViewModel: ObservableObject {
 		return character.name
 	}
 	
-	var gender: RMCharactersPageModel.RMCharacter.Gender {
+	var gender: CharactersPage.Character.Gender {
 		return character.gender
 	}
 	
@@ -27,7 +27,7 @@ class CharacterDetailsViewModel: ObservableObject {
 		return character.image
 	}
 	
-	var status: RMCharactersPageModel.RMCharacter.Status {
+	var status: CharactersPage.Character.Status {
 		return character.status
 	}
 	
@@ -35,16 +35,16 @@ class CharacterDetailsViewModel: ObservableObject {
 		return character.species
 	}
 	
-	var origin: RMCharactersPageModel.RMCharacter.Origin? {
+	var origin: CharactersPage.Character.Origin? {
 		return character.origin
 	}
 	
-	var location: RMCharactersPageModel.RMCharacter.Location? {
+	var location: CharactersPage.Character.Location? {
 		return character.location
 	}
 }
 
-extension RMCharactersPageModel.RMCharacter.Gender {
+extension CharactersPage.Character.Gender {
 	
 	var emoji: String {
 		switch self {

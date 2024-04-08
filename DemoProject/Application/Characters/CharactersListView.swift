@@ -10,7 +10,7 @@ import SwiftUI
 struct CharactersListView: View {
 	
 	@ObservedObject var viewModel: CharactersListViewModel
-	let onSelection: ((RMCharactersPageModel.RMCharacter) -> Void)
+	let onSelection: ((CharactersPage.Character) -> Void)
 	
     var body: some View {
 		contentView
@@ -55,7 +55,7 @@ extension CharactersListView {
 	
 	@ViewBuilder
 	private func listView(
-		characters: [RMCharactersPageModel.RMCharacter]
+		characters: [CharactersPage.Character]
 	) -> some View {
 		List {
 			ForEach(characters) { character in

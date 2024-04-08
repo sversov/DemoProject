@@ -13,14 +13,14 @@ final class CharacterDetailsViewModelTests: XCTestCase {
 	func test_init_shouldInitialiseInstanceProperty() {
 		let expectedName = UUID().uuidString
 		let expectedSpecies = UUID().uuidString
-		let expectedStatus = RMCharactersPageModel
-			.RMCharacter.Status.alive
-		let expectedGender =  RMCharactersPageModel
-			.RMCharacter.Gender.female
+		let expectedStatus = CharactersPage
+			.Character.Status.alive
+		let expectedGender =  CharactersPage
+			.Character.Gender.female
 		let expectedURL = URL(string: "www.validURL.com")
 		let sut = CharacterDetailsViewModel(
-			character: RMCharactersPageModel
-				.RMCharacter
+			character: CharactersPage
+				.Character
 				.make(name: expectedName,
 					  species: expectedSpecies,
 					  status: expectedStatus,

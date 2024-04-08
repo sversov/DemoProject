@@ -43,7 +43,7 @@ private extension CharacterDetailsView {
 	@ViewBuilder
 	func headerView(
 		name: String,
-		gender: RMCharactersPageModel.RMCharacter.Gender,
+		gender: CharactersPage.Character.Gender,
 		species: String
 	) -> some View {
 		VStack(alignment: .leading, spacing: 10) {
@@ -75,7 +75,7 @@ private extension CharacterDetailsView {
 	}
 	
 	func genderView(
-		gender: RMCharactersPageModel.RMCharacter.Gender,
+		gender: CharactersPage.Character.Gender,
 		species: String
 	) -> some View {
 		VStack(alignment: .leading) {
@@ -89,7 +89,7 @@ private extension CharacterDetailsView {
 	}
 	
 	func statusView(
-		status: RMCharactersPageModel.RMCharacter.Status
+		status: CharactersPage.Character.Status
 	) -> some View {
 		VStack(alignment: .leading) {
 			Text("Status")
@@ -107,14 +107,14 @@ private extension CharacterDetailsView {
 	}
 	
 	func statusIndicatorView(
-		status: RMCharactersPageModel.RMCharacter.Status
+		status: CharactersPage.Character.Status
 	) -> some View {
 		Circle()
 			.fill(status.colour)
 	}
 	
 	func originView(
-		origin: RMCharactersPageModel.RMCharacter.Origin?
+		origin: CharactersPage.Character.Origin?
 	) -> some View {
 		VStack(alignment: .leading) {
 			Text("Origin")
@@ -131,7 +131,7 @@ private extension CharacterDetailsView {
 	}
 	
 	func locationView(
-		location: RMCharactersPageModel.RMCharacter.Location?
+		location: CharactersPage.Character.Location?
 	) -> some View {
 		VStack(alignment: .leading) {
 			Text("Current Location")
@@ -149,7 +149,7 @@ private extension CharacterDetailsView {
 	
 }
 
-extension RMCharactersPageModel.RMCharacter.Status {
+extension CharactersPage.Character.Status {
 	
 	var colour: Color {
 		switch self {

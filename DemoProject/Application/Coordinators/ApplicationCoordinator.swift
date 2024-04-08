@@ -28,7 +28,7 @@ class ApplicationCoordinator: Coordinator {
 		window.makeKeyAndVisible()
 	}
 	
-	private func pushCharacterDetails(for character: RMCharactersPageModel.RMCharacter) {
+	private func pushCharacterDetails(for character: CharactersPage.Character) {
 		let view = makeCharacterDetailsView(for: character)
 		navigationController.pushViewController(view,
 												animated: true)
@@ -54,7 +54,7 @@ extension ApplicationCoordinator {
 	}
 	
 	func makeCharacterDetailsView(
-		for character: RMCharactersPageModel.RMCharacter
+		for character: CharactersPage.Character
 	) -> UIViewController {
 		let model = CharacterDetailsViewModel(character: character)
 		let view = CharacterDetailsView(model: model)

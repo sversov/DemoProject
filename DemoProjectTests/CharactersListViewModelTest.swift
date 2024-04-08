@@ -58,7 +58,7 @@ final class CharactersListViewModelTest: XCTestCase {
 	
 	func test_fetchCharacters_whenSuccessResponse_shouldSendLoadedState() {
 		let promise = expectation(description: #function)
-		let expectedResponse = RMCharactersPageModel.Mock.make()
+		let expectedResponse = CharactersPage.Mock.make()
 		let sut = makeSUT(MockPublisher.makeSuccess(expectedResponse))
 		sut.$state
 			.dropFirst(2)
@@ -98,7 +98,7 @@ final class CharactersListViewModelTest: XCTestCase {
 extension CharactersListViewModelTest {
 	
 	func makeSUT(
-		_ publisher: AnyPublisher<RMCharactersPageModel, Error>
+		_ publisher: AnyPublisher<CharactersPage, Error>
 	) -> CharactersListViewModel {
 		let stubApiClient = APIClientStub(publisher: publisher)
 		return CharactersListViewModel(apiClient: stubApiClient)
@@ -122,10 +122,10 @@ extension CharactersListViewModel.State: Equatable {
 }
 
 
-extension RMCharactersPageModel.RMCharacter: Equatable {
+extension CharactersPage.Character: Equatable {
 	public static func == (
-		lhs: RMCharactersPageModel.RMCharacter,
-		rhs: RMCharactersPageModel.RMCharacter
+		lhs: CharactersPage.Character,
+		rhs: CharactersPage.Character
 	) -> Bool {
 		return lhs.id == rhs.id
 	}

@@ -1,5 +1,5 @@
 //
-//  MockCreditReportInfo.swift
+//  MockCharactersPage.swift
 //  DemoProjectTests
 //
 //  Created by Yevgeniy Prokoshev on 15/01/2023.
@@ -8,19 +8,19 @@
 import Foundation
 @testable import DemoProject
 
-extension RMCharactersPageModel {
+extension CharactersPage {
 	
 	enum Mock {
-		static func make() -> RMCharactersPageModel {
-			RMCharactersPageModel.make()
+		static func make() -> CharactersPage {
+			CharactersPage.make()
 		}
 	}
 }
 
-extension RMCharactersPageModel.Page: Equatable {
+extension CharactersPage.Page: Equatable {
 	public static func == (
-		lhs: RMCharactersPageModel.Page,
-		rhs: RMCharactersPageModel.Page
+		lhs: CharactersPage.Page,
+		rhs: CharactersPage.Page
 	) -> Bool {
 		lhs.numberOfPages == rhs.numberOfPages &&
 		lhs.resultsCount == rhs.resultsCount &&

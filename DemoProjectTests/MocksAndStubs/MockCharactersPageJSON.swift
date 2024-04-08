@@ -1,5 +1,5 @@
 	//
-	//  MockRMCharactersPageModelJSON.swift
+	//  MockCharactersPageJSON.swift
 	//  DemoProjectTests
 	//
 	//  Created by Yevgeniy Prokoshev on 07/04/2024.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-enum MockRMCharactersPageModelJSON {
+enum MockCharactersPageJSON {
 	
 	static func make() -> Data {
 		let jsonString = pageJSON
@@ -27,7 +27,7 @@ enum MockRMCharactersPageModelJSON {
 }
 
 
-private extension MockRMCharactersPageModelJSON {
+private extension MockCharactersPageJSON {
 	
 	static let pageJSON = """
  {

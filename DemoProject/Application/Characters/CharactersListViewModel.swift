@@ -14,7 +14,7 @@ class CharactersListViewModel: ObservableObject {
 		case idle
 		case loading
 		case error(Error)
-		case loaded([RMCharactersPageModel.RMCharacter])
+		case loaded([CharactersPage.Character])
 	}
 	
 	@Published private(set) var state: State = .idle
@@ -29,7 +29,7 @@ class CharactersListViewModel: ObservableObject {
 	
 	func fetchCharacters() {
 		state = .loading
-		let charactersRequest = Request<RMCharactersPageModel>.get("/character")
+		let charactersRequest = Request<CharactersPage>.get("/character")
 		apiClient.send(request: charactersRequest)
 			.receive(on: DispatchQueue.main)
 			.sink { [weak self] completion in

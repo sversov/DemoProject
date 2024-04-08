@@ -9,9 +9,9 @@ import Combine
 
 struct APIClientStub: APIClient {
 	
-	private let mockResponse = RMCharactersPageModel.Mock.make()
+	private let mockResponse = CharactersPage.Mock.make()
 	
-	typealias PagePublisher = AnyPublisher<RMCharactersPageModel, Error>
+	typealias PagePublisher = AnyPublisher<CharactersPage, Error>
 	var publisher: PagePublisher = MockPublisher.makeSuccess()
 	
 	func send<Response>(
@@ -27,8 +27,8 @@ struct APIClientStub: APIClient {
 enum MockPublisher {
 	
 	static func makeSuccess(
-		_ page: RMCharactersPageModel = RMCharactersPageModel.Mock.make()
-	) -> AnyPublisher<RMCharactersPageModel, Error> {
+		_ page: CharactersPage = CharactersPage.Mock.make()
+	) -> AnyPublisher<CharactersPage, Error> {
 		return Result.success(page)
 			.publisher
 			.eraseToAnyPublisher()
@@ -36,7 +36,7 @@ enum MockPublisher {
 	
 	static func makeFailure(
 		_ error: Error
-	) -> AnyPublisher<RMCharactersPageModel, Error> {
+	) -> AnyPublisher<CharactersPage, Error> {
 		return Result.failure(error)
 			.publisher
 			.eraseToAnyPublisher()

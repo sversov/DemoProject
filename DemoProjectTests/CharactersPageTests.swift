@@ -8,20 +8,20 @@
 import XCTest
 @testable import DemoProject
 
-class RMCharactersPageModelTests: XCTestCase {
+class CharactersPageTests: XCTestCase {
 
 	private let decoder = JSONDecoder()
 	
 	func test_decode_validJSON_returnsExpectedResultsCount() throws {
-		let data = MockRMCharactersPageModelJSON.make()
-		let sut = try decoder.decode(RMCharactersPageModel.self,
+		let data = MockCharactersPageJSON.make()
+		let sut = try decoder.decode(CharactersPage.self,
 									 from: data)
 		XCTAssertEqual(sut.results.count, 1)
 	}
 	
 	func test_decode_validJSON_returnsExpectedPageInfo() throws {
-		let data = MockRMCharactersPageModelJSON.make()
-		let sut = try decoder.decode(RMCharactersPageModel.self,
+		let data = MockCharactersPageJSON.make()
+		let sut = try decoder.decode(CharactersPage.self,
 									 from: data)
 		XCTAssertEqual(sut.info.numberOfPages, 10)
 		XCTAssertNotNil(sut.info.nextPage)
@@ -30,8 +30,8 @@ class RMCharactersPageModelTests: XCTestCase {
 	}
 	
 	func test_decode_validJSON_returnsExpectedCharacter() throws {
-		let data = MockRMCharactersPageModelJSON.make()
-		let sut = try decoder.decode(RMCharactersPageModel.self,
+		let data = MockCharactersPageJSON.make()
+		let sut = try decoder.decode(CharactersPage.self,
 									 from: data)
 		
 		XCTAssertEqual(sut.results.count, 1)
@@ -45,9 +45,9 @@ class RMCharactersPageModelTests: XCTestCase {
 	}
 	
 	func test_decode_malformedJSON_shouldThrow_dataCorruptedError() throws {
-		let data = MockRMCharactersPageModelJSON.makeMalformed()
+		let data = MockCharactersPageJSON.makeMalformed()
 		do {
-			_ = try decoder.decode(RMCharactersPageModel.self,
+			_ = try decoder.decode(CharactersPage.self,
 								   from: data)
 			XCTFail(#function)
 		} catch let error as DecodingError {
@@ -61,9 +61,9 @@ class RMCharactersPageModelTests: XCTestCase {
 	}
 	
 	func test_decode_missingKeyJSON_shouldThrow_keyNotFoundError() throws {
-		let data = MockRMCharactersPageModelJSON.makeMissingKeyJSON()
+		let data = MockCharactersPageJSON.makeMissingKeyJSON()
 		do {
-			_ = try decoder.decode(RMCharactersPageModel.self,
+			_ = try decoder.decode(CharactersPage.self,
 								   from: data)
 			XCTFail(#function)
 		} catch let error as DecodingError {

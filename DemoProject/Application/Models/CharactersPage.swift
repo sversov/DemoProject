@@ -45,7 +45,7 @@ import Foundation
  }
  */
 
-struct RMCharactersPageModel: Decodable {
+struct CharactersPage: Decodable {
 	
 	struct Page: Decodable {
 		let resultsCount: Int
@@ -54,7 +54,7 @@ struct RMCharactersPageModel: Decodable {
 		let previousPage: URL?
 	}
 	
-	struct RMCharacter: Decodable, Identifiable {
+	struct Character: Decodable, Identifiable {
 		
 		struct Origin: Decodable {
 			let name: String?
@@ -90,11 +90,11 @@ struct RMCharactersPageModel: Decodable {
 	}
 	
 	let info: Page
-	let results: [RMCharacter]
+	let results: [Character]
 }
 
 
-extension RMCharactersPageModel.Page {
+extension CharactersPage.Page {
 	
 	enum CodingKeys: String, CodingKey{
 		case resultsCount = "count"
@@ -113,7 +113,7 @@ extension RMCharactersPageModel.Page {
 }
 
 
-extension RMCharactersPageModel.RMCharacter.Origin {
+extension CharactersPage.Character.Origin {
 	
 	enum CodingKeys: String, CodingKey{
 		case name
@@ -127,7 +127,7 @@ extension RMCharactersPageModel.RMCharacter.Origin {
 	}
 }
 
-extension RMCharactersPageModel.RMCharacter.Location {
+extension CharactersPage.Character.Location {
 	
 	enum CodingKeys: String, CodingKey{
 		case name
@@ -141,24 +141,24 @@ extension RMCharactersPageModel.RMCharacter.Location {
 	}
 }
 
-extension RMCharactersPageModel {
+extension CharactersPage {
 	
-	static func make() -> RMCharactersPageModel {
-		return RMCharactersPageModel(
+	static func make() -> CharactersPage {
+		return CharactersPage(
 			info: .make(),
 			results: .make(count: 10))
 	}
 }
  
-extension RMCharactersPageModel.RMCharacter {
+extension CharactersPage.Character {
 	static func make(
 		name: String = UUID().uuidString,
 		species: String = UUID().uuidString,
-		status: RMCharactersPageModel.RMCharacter.Status = .alive,
-		gender: RMCharactersPageModel.RMCharacter.Gender = .male,
+		status: CharactersPage.Character.Status = .alive,
+		gender: CharactersPage.Character.Gender = .male,
 		image: URL? = URL(string: "https://rickandmortyapi.com/api/character/avatar/3.jpeg")
-	) -> RMCharactersPageModel.RMCharacter {
-		RMCharactersPageModel.RMCharacter(
+	) -> CharactersPage.Character {
+		CharactersPage.Character(
 			id: UUID().hashValue,
 			name: name,
 			status: status,
@@ -170,9 +170,9 @@ extension RMCharactersPageModel.RMCharacter {
 	}
 }
 
-private extension RMCharactersPageModel.Page {
-	static func make() -> RMCharactersPageModel.Page {
-		RMCharactersPageModel.Page(
+private extension CharactersPage.Page {
+	static func make() -> CharactersPage.Page {
+		CharactersPage.Page(
 			resultsCount: 10,
 			numberOfPages: 10,
 			nextPage: nil,
@@ -180,26 +180,26 @@ private extension RMCharactersPageModel.Page {
 	}
 }
 
-private extension RMCharactersPageModel.RMCharacter.Origin {
-	static func make() -> RMCharactersPageModel.RMCharacter.Origin {
-		RMCharactersPageModel.RMCharacter.Origin(
+private extension CharactersPage.Character.Origin {
+	static func make() -> CharactersPage.Character.Origin {
+		CharactersPage.Character.Origin(
 			name: "Origin Name",
 			url: nil)
 	}
 }
 
-private extension RMCharactersPageModel.RMCharacter.Location {
-	static func make() -> RMCharactersPageModel.RMCharacter.Location {
-		RMCharactersPageModel.RMCharacter.Location(
+private extension CharactersPage.Character.Location {
+	static func make() -> CharactersPage.Character.Location {
+		CharactersPage.Character.Location(
 			name: "Location Name",
 			url: nil)
 	}
 }
 
-private extension Array where Element == RMCharactersPageModel.RMCharacter {
-	static func make(count: Int) -> [RMCharactersPageModel.RMCharacter] {
+private extension Array where Element == CharactersPage.Character {
+	static func make(count: Int) -> [CharactersPage.Character] {
 		let result = (0...count).map { _ in
-			return RMCharactersPageModel.RMCharacter.make()
+			return CharactersPage.Character.make()
 		}
 		return result
 	}
