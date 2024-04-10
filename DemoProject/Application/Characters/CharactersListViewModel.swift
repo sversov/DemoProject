@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class CharactersListViewModel: ObservableObject {
+final class CharactersListViewModel: ObservableObject {
 	
 	enum State {
 		case idle

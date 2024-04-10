@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharacterDetailsViewModel: ObservableObject {
+final class CharacterDetailsViewModel: ObservableObject {
 	
 	private let character: CharactersPage.Character
 	

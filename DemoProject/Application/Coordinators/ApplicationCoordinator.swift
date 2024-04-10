@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 
-class ApplicationCoordinator: Coordinator {
+final class ApplicationCoordinator: Coordinator {
 	
 	private let window: UIWindow
 	private let navigationController: UINavigationController
