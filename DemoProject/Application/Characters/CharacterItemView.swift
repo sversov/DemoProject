@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Decouple view from model
 struct CharacterItemView: View {
 	
 	let name: String

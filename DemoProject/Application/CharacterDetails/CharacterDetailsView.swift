@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Decouple views from model
 struct CharacterDetailsView: View {
 	
 	@ObservedObject var model: CharacterDetailsViewModel
@@ -58,7 +59,7 @@ private extension CharacterDetailsView {
 	
 	
 	@ViewBuilder
-	func profileView(
+	private func profileView(
 		imageURL: URL?
 	) -> some View {
 		if let imageURL = imageURL {
@@ -74,7 +75,7 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	func genderView(
+	private func genderView(
 		gender: CharactersPage.Character.Gender,
 		species: String
 	) -> some View {
@@ -88,7 +89,7 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	func statusView(
+	private func statusView(
 		status: CharactersPage.Character.Status
 	) -> some View {
 		VStack(alignment: .leading) {
@@ -106,14 +107,14 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	func statusIndicatorView(
+	private func statusIndicatorView(
 		status: CharactersPage.Character.Status
 	) -> some View {
 		Circle()
 			.fill(status.colour)
 	}
 	
-	func originView(
+	private func originView(
 		origin: CharactersPage.Character.Origin?
 	) -> some View {
 		VStack(alignment: .leading) {
@@ -130,7 +131,7 @@ private extension CharacterDetailsView {
 		}
 	}
 	
-	func locationView(
+	private func locationView(
 		location: CharactersPage.Character.Location?
 	) -> some View {
 		VStack(alignment: .leading) {

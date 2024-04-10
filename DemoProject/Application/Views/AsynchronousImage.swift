@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// TODO: Refactor to load data, use caching etc.
+
 struct AsynchronousImage: View {
 	let url: URL
 	

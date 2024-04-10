@@ -8,6 +8,8 @@
 import Combine
 import Foundation
 
+// TODO: Refactor to use async/await
+
 protocol APIClient {
 	func send<Response>(
 		request: Request<Response>

@@ -8,6 +8,10 @@
 import Foundation
 import Combine
 
+// TODO: Refactor to use async/await
+// Decouple decoding logic
+// Decouple Error handling logic 
+
 struct DemoProjectAPIClient: APIClient {
 	
 	enum HTTPError: Error {

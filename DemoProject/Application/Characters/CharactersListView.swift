@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Decouple views from model
 struct CharactersListView: View {
 	
 	@ObservedObject var viewModel: CharactersListViewModel
