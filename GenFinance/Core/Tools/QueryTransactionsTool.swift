@@ -30,7 +30,7 @@ struct QueryTransactionsTool: Tool {
     let store: TransactionStore
 
     @MainActor
-    func call(arguments: Arguments) async throws -> ToolOutput {
+    func call(arguments: Arguments) async throws -> String {
         let cal = Calendar(identifier: .gregorian)
         let now = Date()
 
@@ -53,26 +53,26 @@ struct QueryTransactionsTool: Tool {
             let total = store.total(in: r, category: arguments.category)
             let count = store.transactions(in: r).filter { $0.isExpense && (arguments.category == nil || $0.category == arguments.category) }.count
             let scope = arguments.category.map { "in \($0.displayName)" } ?? "across all categories"
-            return ToolOutput("Total spending \(scope) in \(label(monthsBack: arguments.monthsBack)): $\(format(total)) across \(count) transactions.")
+            return "Total spending \(scope) in \(label(monthsBack: arguments.monthsBack)): $\(format(total)) across \(count) transactions."
 
         case "byCategory":
             let r = range(monthsBack: arguments.monthsBack)
             let totals = store.totalsByCategory(in: r)
             let lines = totals.map { "  - \($0.category.displayName): $\(format($0.amount))" }.joined(separator: "\n")
-            return ToolOutput("Category breakdown in \(label(monthsBack: arguments.monthsBack)):\n\(lines)")
+            return "Category breakdown in \(label(monthsBack: arguments.monthsBack)):\n\(lines)"
 
         case "topMerchants":
             let r = range(monthsBack: arguments.monthsBack)
             let limit = arguments.limit ?? 5
             let tops = store.totalsByMerchant(in: r, limit: limit)
             let lines = tops.map { "  - \($0.merchant): $\(format($0.amount)) (\($0.count) txns)" }.joined(separator: "\n")
-            return ToolOutput("Top \(limit) merchants in \(label(monthsBack: arguments.monthsBack)):\n\(lines)")
+            return "Top \(limit) merchants in \(label(monthsBack: arguments.monthsBack)):\n\(lines)"
 
         case "timeSeries":
             let r = range(monthsBack: arguments.monthsBack)
             let weeks = weeklyTotals(in: r, cal: cal)
             let lines = weeks.map { "  - \($0.label): $\(format($0.amount))" }.joined(separator: "\n")
-            return ToolOutput("Weekly spending in \(label(monthsBack: arguments.monthsBack)):\n\(lines)")
+            return "Weekly spending in \(label(monthsBack: arguments.monthsBack)):\n\(lines)"
 
         case "compareMonths":
             let a = range(monthsBack: arguments.monthsBack)
@@ -80,17 +80,18 @@ struct QueryTransactionsTool: Tool {
             let totalA = store.total(in: a)
             let totalB = store.total(in: b)
             let delta = totalB > 0 ? (totalA - totalB) / totalB : 0
-            return ToolOutput("""
+            return """
                 \(label(monthsBack: arguments.monthsBack)): $\(format(totalA))
                 \(label(monthsBack: arguments.monthsBackB ?? arguments.monthsBack + 1)): $\(format(totalB))
                 Change: \(format(delta * 100))%
-                """)
+                """
 
         default:
-            return ToolOutput("Unknown query kind '\(arguments.kind)'. Use one of: total, byCategory, topMerchants, timeSeries, compareMonths.")
+            return "Unknown query kind '\(arguments.kind)'. Use one of: total, byCategory, topMerchants, timeSeries, compareMonths."
         }
     }
 
+    @MainActor
     private func weeklyTotals(in range: ClosedRange<Date>, cal: Calendar) -> [(label: String, amount: Double)] {
         var current = range.lowerBound
         var result: [(String, Double)] = []
